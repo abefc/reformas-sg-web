@@ -7,19 +7,15 @@ export function BrushReveal({
   children,
   delay = 0,
   duration = 1.4,
-  className,
-  as: Tag = "span"
+  className
 }: {
   children: React.ReactNode;
   delay?: number;
   duration?: number;
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
 }) {
-  const MotionTag = motion(Tag as any);
-
   return (
-    <MotionTag
+    <motion.span
       initial={{ clipPath: "inset(0 100% 0 0)", filter: "blur(6px)" }}
       animate={{ clipPath: "inset(0 0% 0 0)", filter: "blur(0px)" }}
       transition={{
@@ -29,6 +25,6 @@ export function BrushReveal({
       className={cn("inline-block will-change-[clip-path]", className)}
     >
       {children}
-    </MotionTag>
+    </motion.span>
   );
 }
