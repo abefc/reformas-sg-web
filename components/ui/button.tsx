@@ -8,11 +8,15 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-gold text-black hover:bg-gold-300 ring-gold shadow-[0_8px_30px_-12px_rgba(212,175,55,0.6)] hover:shadow-[0_12px_40px_-12px_rgba(212,175,55,0.7)]",
+          "bg-terracotta-300 text-white hover:bg-terracotta-400 shadow-[0_8px_30px_-12px_rgba(201,123,95,0.55)] hover:shadow-[0_12px_40px_-12px_rgba(201,123,95,0.7)]",
+        sage:
+          "bg-sage-300 text-charcoal-800 hover:bg-sage-400 hover:text-white shadow-[0_8px_30px_-14px_rgba(168,181,161,0.6)]",
+        sand:
+          "bg-sand-200 text-charcoal-800 hover:bg-sand-300 shadow-[0_8px_30px_-14px_rgba(230,213,195,0.7)]",
         outline:
-          "border border-white/15 bg-white/5 text-white backdrop-blur hover:border-gold/60 hover:bg-white/10 hover:text-gold",
-        ghost: "text-white/80 hover:bg-white/10 hover:text-white",
-        link: "text-gold underline-offset-4 hover:underline"
+          "border border-charcoal-700/15 bg-white/70 text-charcoal-700 backdrop-blur hover:border-terracotta-300/60 hover:bg-white hover:text-terracotta-400",
+        ghost: "text-charcoal-600 hover:bg-charcoal-700/5 hover:text-charcoal-800",
+        link: "text-terracotta-300 underline-offset-4 hover:underline"
       },
       size: {
         default: "h-11 px-6 py-2",

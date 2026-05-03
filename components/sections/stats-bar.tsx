@@ -31,31 +31,31 @@ const stats = [
 
 export function StatsBar() {
   return (
-    <section className="relative border-y border-white/5 bg-black/40 py-16">
+    <section className="relative bg-cream-100 py-20">
       <div className="container">
         <Reveal>
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-charcoal-700/10 bg-charcoal-700/10 md:grid-cols-3">
             {stats.map((s, i) => {
               const Icon = s.icon;
               return (
                 <div
                   key={i}
-                  className="relative bg-black/60 p-8 transition hover:bg-white/[0.03]"
+                  className="relative bg-white p-8 transition hover:bg-cream-50"
                 >
-                  <div className="mb-5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-gold/10 text-gold ring-1 ring-gold/30">
+                  <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-full bg-sage-50 text-sage-500 ring-1 ring-sage-200">
                     <Icon className="h-4 w-4" />
                   </div>
-                  <div className="font-display text-5xl font-medium tracking-tight text-white md:text-6xl">
+                  <div className="font-display text-5xl font-medium tracking-tight text-charcoal-800 md:text-6xl">
                     <NumberTicker
                       value={s.value}
                       decimalPlaces={s.decimals ?? 0}
                     />
-                    <span className="text-gold">{s.suffix}</span>
+                    <span className="text-terracotta-300">{s.suffix}</span>
                   </div>
-                  <div className="mt-3 text-sm font-medium text-white/85">
+                  <div className="mt-3 text-sm font-medium text-charcoal-700">
                     {s.label}
                   </div>
-                  <div className="text-xs text-white/45">{s.sub}</div>
+                  <div className="text-xs text-charcoal-500">{s.sub}</div>
                 </div>
               );
             })}

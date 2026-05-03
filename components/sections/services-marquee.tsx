@@ -29,11 +29,11 @@ function Pill({ label, Icon }: { label: string; Icon: typeof Hammer }) {
   return (
     <div
       className={cn(
-        "mx-2 flex shrink-0 items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 text-sm text-white/85",
-        "transition hover:border-gold/40 hover:bg-white/[0.06] hover:text-white"
+        "mx-2 flex shrink-0 items-center gap-3 rounded-full border border-charcoal-700/10 bg-white px-6 py-3 text-sm text-charcoal-700",
+        "transition hover:border-terracotta-300/40 hover:text-charcoal-800 hover:shadow-[0_8px_24px_-12px_rgba(31,41,55,0.12)]"
       )}
     >
-      <Icon className="h-4 w-4 text-gold" />
+      <Icon className="h-4 w-4 text-terracotta-300" />
       <span className="whitespace-nowrap tracking-tight">{label}</span>
     </div>
   );
@@ -45,16 +45,16 @@ export function ServicesMarquee() {
       <div className="container">
         <Reveal>
           <div className="mb-14 flex flex-col items-center text-center">
-            <span className="mb-3 text-xs uppercase tracking-[0.3em] text-gold">
+            <span className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta-300">
               Servicios
             </span>
-            <h2 className="font-display max-w-3xl text-balance text-4xl font-medium leading-tight tracking-tight text-white md:text-5xl">
+            <h2 className="font-display max-w-3xl text-balance text-4xl font-medium leading-tight tracking-tight text-charcoal-800 md:text-5xl">
               Un único contacto para{" "}
-              <span className="gradient-text">toda tu reforma</span>
+              <span className="italic text-sage-500">toda tu reforma</span>
             </h2>
-            <p className="mt-4 max-w-xl text-white/55">
-              Coordinamos todos los gremios para que tú no tengas que pensar en
-              nada. Diseño, ejecución, acabados y entrega — siempre con
+            <p className="mt-4 max-w-xl text-charcoal-600">
+              Coordinamos todos los gremios para que tú no tengas que pensar
+              en nada. Diseño, ejecución, acabados y entrega — siempre con
               dirección de obra propia.
             </p>
           </div>

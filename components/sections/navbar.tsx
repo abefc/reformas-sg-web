@@ -2,16 +2,33 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, Hammer } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const links = [
   { href: "#servicios", label: "Servicios" },
   { href: "#proyectos", label: "Proyectos" },
+  { href: "#antes-despues", label: "Antes / Después" },
   { href: "#proceso", label: "Proceso" },
   { href: "#contacto", label: "Contacto" }
 ];
+
+function Logo() {
+  return (
+    <a
+      href="#"
+      className="flex items-center gap-2 pl-2 text-sm font-semibold tracking-tight text-charcoal-800"
+    >
+      <span className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-sand-200 to-terracotta-300 text-white shadow-sm">
+        <span className="font-display text-base leading-none">SG</span>
+      </span>
+      <span>
+        Reformas <span className="text-terracotta-300">SG</span>
+      </span>
+    </a>
+  );
+}
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,27 +51,19 @@ export function Navbar() {
       <nav
         className={cn(
           "flex w-full max-w-5xl items-center justify-between rounded-full px-3 py-2 transition-all duration-300",
-          scrolled ? "glass scroll-shadow" : "border border-white/5 bg-black/30 backdrop-blur"
+          scrolled
+            ? "glass-light soft-shadow"
+            : "border border-charcoal-700/5 bg-white/50 backdrop-blur"
         )}
       >
-        <a
-          href="#"
-          className="flex items-center gap-2 pl-2 text-sm font-semibold tracking-tight"
-        >
-          <span className="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-gold to-gold-700 text-black">
-            <Hammer className="h-4 w-4" />
-          </span>
-          <span className="text-white">
-            Reformas <span className="text-gold">SG</span>
-          </span>
-        </a>
+        <Logo />
 
         <div className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="rounded-full px-4 py-2 text-sm text-white/70 transition hover:bg-white/5 hover:text-white"
+              className="rounded-full px-4 py-2 text-sm text-charcoal-600 transition hover:bg-charcoal-700/5 hover:text-charcoal-800"
             >
               {l.label}
             </a>
@@ -66,7 +75,7 @@ export function Navbar() {
         </a>
 
         <button
-          className="md:hidden rounded-full p-2 text-white/80"
+          className="rounded-full p-2 text-charcoal-700 md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Abrir menú"
         >
@@ -76,13 +85,13 @@ export function Navbar() {
 
       {open && (
         <div className="absolute top-16 mx-4 w-[calc(100%-2rem)] max-w-5xl md:hidden">
-          <div className="glass scroll-shadow rounded-2xl p-2">
+          <div className="glass-light soft-shadow rounded-2xl p-2">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-xl px-4 py-3 text-sm text-white/80 hover:bg-white/5"
+                className="block rounded-xl px-4 py-3 text-sm text-charcoal-700 hover:bg-charcoal-700/5"
               >
                 {l.label}
               </a>
@@ -90,7 +99,7 @@ export function Navbar() {
             <a
               href="#contacto"
               onClick={() => setOpen(false)}
-              className="mt-2 block rounded-xl bg-gold px-4 py-3 text-center text-sm font-medium text-black"
+              className="mt-2 block rounded-xl bg-terracotta-300 px-4 py-3 text-center text-sm font-medium text-white"
             >
               Pedir presupuesto
             </a>

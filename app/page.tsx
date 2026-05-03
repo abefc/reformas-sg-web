@@ -2,8 +2,9 @@ import { Navbar } from "@/components/sections/navbar";
 import { Hero } from "@/components/sections/hero";
 import { StatsBar } from "@/components/sections/stats-bar";
 import { ServicesMarquee } from "@/components/sections/services-marquee";
-import { ProjectsList } from "@/components/sections/projects-list";
-import { ProcessTerminal } from "@/components/sections/process-terminal";
+import { BeforeAfter } from "@/components/sections/before-after";
+import { ProjectsMasonry } from "@/components/sections/projects-masonry";
+import { ProcessBlueprint } from "@/components/sections/process-blueprint";
 import { CTA } from "@/components/sections/cta";
 import { Footer } from "@/components/sections/footer";
 
@@ -14,8 +15,9 @@ export default function Page() {
       <Hero />
       <StatsBar />
       <ServicesMarquee />
-      <ProjectsList />
-      <ProcessTerminal />
+      <BeforeAfter />
+      <ProjectsMasonry />
+      <ProcessBlueprint />
       <CTA />
       <Footer />
     </main>

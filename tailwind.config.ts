@@ -40,29 +40,58 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))"
         },
-        gold: {
-          DEFAULT: "#D4AF37",
-          50: "#FBF6E3",
-          100: "#F5E9B8",
-          200: "#EBD584",
-          300: "#E1C150",
-          400: "#D4AF37",
-          500: "#B5942A",
-          600: "#8E731F",
-          700: "#675316",
-          800: "#41340D",
-          900: "#1F1906"
+        cream: {
+          DEFAULT: "#FAF7F2",
+          50: "#FFFDFA",
+          100: "#FAF7F2",
+          200: "#F4EFE6",
+          300: "#EDE5D6"
+        },
+        sand: {
+          DEFAULT: "#E6D5C3",
+          50: "#FBF6F0",
+          100: "#F4E9DC",
+          200: "#E6D5C3",
+          300: "#D4BB9F",
+          400: "#BFA079",
+          500: "#A78258",
+          600: "#856543"
+        },
+        sage: {
+          DEFAULT: "#A8B5A1",
+          50: "#F0F2EE",
+          100: "#DDE3D9",
+          200: "#C0CAB9",
+          300: "#A8B5A1",
+          400: "#8B9C82",
+          500: "#6F8167",
+          600: "#566650"
+        },
+        terracotta: {
+          DEFAULT: "#C97B5F",
+          50: "#F8E9E1",
+          100: "#F0D2C3",
+          200: "#E2A98F",
+          300: "#C97B5F",
+          400: "#A95C42",
+          500: "#864633"
+        },
+        charcoal: {
+          DEFAULT: "#374151",
+          800: "#1F2937",
+          700: "#374151",
+          600: "#4B5563",
+          500: "#6B7280"
         }
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-playfair)", "serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "monospace"]
+        display: ["var(--font-playfair)", "serif"]
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)"
+        md: "calc(var(--radius) - 4px)",
+        sm: "calc(var(--radius) - 8px)"
       },
       keyframes: {
         marquee: {
@@ -73,31 +102,26 @@ const config: Config = {
           from: { transform: "translateY(0)" },
           to: { transform: "translateY(calc(-100% - var(--gap)))" }
         },
-        aurora: {
-          from: { backgroundPosition: "50% 50%, 50% 50%" },
-          to: { backgroundPosition: "350% 50%, 350% 50%" }
-        },
-        shimmer: {
-          "0%": { backgroundPosition: "-200% 0" },
-          "100%": { backgroundPosition: "200% 0" }
-        },
         "fade-in-up": {
           from: { opacity: "0", transform: "translateY(20px)" },
           to: { opacity: "1", transform: "translateY(0)" }
+        },
+        brush: {
+          "0%": { clipPath: "inset(0 100% 0 0)" },
+          "100%": { clipPath: "inset(0 0 0 0)" }
         }
       },
       animation: {
         marquee: "marquee var(--duration, 40s) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration, 40s) linear infinite",
-        aurora: "aurora 60s linear infinite",
-        shimmer: "shimmer 2s linear infinite",
-        "fade-in-up": "fade-in-up 0.6s ease-out forwards"
+        "fade-in-up": "fade-in-up 0.6s ease-out forwards",
+        brush: "brush 1.4s cubic-bezier(0.7, 0, 0.3, 1) forwards"
       },
       backgroundImage: {
-        "gold-gradient":
-          "linear-gradient(135deg, #FBF6E3 0%, #D4AF37 50%, #8E731F 100%)",
-        "radial-fade":
-          "radial-gradient(ellipse at top, hsla(45,72%,52%,0.18), transparent 60%)"
+        "warm-fade":
+          "linear-gradient(135deg, #FAF7F2 0%, #F4EFE6 50%, #EDE5D6 100%)",
+        "sage-fade":
+          "linear-gradient(135deg, #F0F2EE 0%, #DDE3D9 100%)"
       }
     }
   },
